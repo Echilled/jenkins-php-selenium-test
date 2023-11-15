@@ -3,7 +3,7 @@
 set -x
 docker network rm test-network
 docker network create --subnet=172.18.0.0/16 test-network
-docker run -d -p 80:80 --name my-apache-php-app -v $(pwd)\src:/var/www/html --ip 172.18.0.2 php:7.2-apache
+docker run -d -p 80:80 --name my-apache-php-app -v $(pwd)/src:/var/www/html --ip 172.18.0.2 php:7.2-apache
 sleep 1
 set +x
 
