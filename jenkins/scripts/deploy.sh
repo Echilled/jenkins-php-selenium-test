@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 set -x
 docker network rm test-network
 docker network create --subnet=172.18.0.0/16 test-network
