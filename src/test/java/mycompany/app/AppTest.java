@@ -39,7 +39,7 @@ public class AppTest
     public void tearDown() { 
 		driver.quit(); 
 	}	 
-	
+
     @Test
     public void testLoginWithValidEmailValidPassword() 
 		throws InterruptedException { 
@@ -54,13 +54,13 @@ public class AppTest
 		driver.findElement(By.name("password")).sendKeys(validPassword);
 		//click submit
 		driver.findElement(By.name("submit")).submit();
-	
+
 		//check result 
 		String expectedResult = "Dashboard |"; 
 		boolean isResultCorrect = wait.until(ExpectedConditions.titleContains(expectedResult)); 
 		assertTrue(isResultCorrect == true); 
 	}
-		
+
 	@Test
     public void testLoginWithValidEmailInvalidPassword() 
 		throws InterruptedException { 
@@ -75,7 +75,7 @@ public class AppTest
 		driver.findElement(By.name("password")).sendKeys(invalidPassword);
 		//click submit
 		driver.findElement(By.name("submit")).submit();
-	
+
 		//check result
 		By errorMsgId = By.className("error-msg");
 		String expectedResult = "Login failed"; 
